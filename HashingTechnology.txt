@@ -1,0 +1,56 @@
+-----How Hashmap works internally....---
+
+
+Hashmap works internally on hashing technology
+Uses hashCode() method to generate hashcode 
+
+  HashMap<String , Integer > hmap = new hashMap<>();
+  hmap.put("One" 1,);
+ 
+
+When a object of map is created
+it intrnally createas an array of bucket(16 Size of Bucket )
+Each bucket is called node(Linked list node ) 
+and uses linked list technology
+
+hmap.put(Key k, Value v); is called 
+hash(k);
+it generates hascode for the key.
+
+the Node (Linked list ) will be having information of Hascode, key , value , and next(address of next node)
+
+
+HashMap works on the principle of hashing, we have put(key, value) and get(key) method for storing and retrieving Objects from HashMap. 
+When we pass Key and Value object  to put() method on Java HashMap, 
+HashMap implementation calls hashCode method on Key object and applies returned hashcode into its own hashing function
+ to find a bucket location for storing Entry object,
+important point to mention is that HashMap in Java stores both key and value object as Map.
+Entry in a bucket which is essential to understand the retrieving logic
+
+Read more: https://javarevisited.blogspot.com/2011/02/how-hashmap-works-in-java.html#ixzz67FjvzQCE
+
+==========Get method in hashMap
+
+Get method generates hashCode of the key and 
+uses equals() method to get the value of requested 
+
+
+Why wrapper classes are uses to addres any list or map 
+tring, Integer and other wrapper classes are natural candidates of HashMap key, and String is most frequently used key as well because String is immutable and final, and overrides equals and hashcode() method. Other wrapper class also shares similar property. Immutability is required, in order to prevent changes on fields used to calculate hashCode() because if key object returns different hashCode during insertion and retrieval than it won't be possible to get an object from HashMap. 
+
+Immutability is best as it offers other advantages as well like thread-safety, If you can  keep your hashCode same by only making certain fields final, then you go for that as well. Since equals() and hashCode() method is used during retrieval of value object from HashMap, it's important that key object correctly override these methods and follow contact. If unequal object returns different hashcode than chances of collision will be less which subsequently improve the performance of HashMap.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
